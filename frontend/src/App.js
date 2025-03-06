@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Registration";
@@ -31,7 +31,10 @@ function MainContent() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/recipes" element={<RecipeDashboard isLoggedIn={isLoggedIn} />} />
+        <Route
+          path="/recipes"
+          element={isLoggedIn ? <RecipeDashboard /> : <Navigate to="/login" />}
+        />
       </Routes>
     </div>
   );
