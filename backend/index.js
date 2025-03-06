@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs"); // Changed from bcrypt to bcryptjs
 const jwt = require("jsonwebtoken");
 const User = require("./models/Users");
 const Recipe = require("./models/RecipeSchema");
@@ -12,15 +12,15 @@ app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
-const SECRET_KEY = "mySuperSecureSecretKey123!";
+const SECRET_KEY = process.env.SECRET_KEY || "mySuperSecureSecretKey123!"; // Use env variable
 
 // Connect to MongoDB Atlas
-mongoose.connect("mongodb+srv://pratham26:pratham26@cluster0.xc85u.mongodb.net/Users_info?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
   .then(() => console.log("✅ Connected to MongoDB Atlas"))
-  .catch(err => console.log("❌ MongoDB Atlas connection error:", err));
+  .catch(err => console.error("❌ MongoDB Atlas connection error:", err));
 
 // User Registration
 app.post("/register", async (req, res) => {
@@ -39,7 +39,7 @@ app.post("/register", async (req, res) => {
     const newUser = new User({ name, email, password: hashedPassword });
 
     await newUser.save();
-    res.json({ message: "✅ Registration Successful!" });
+    res.status(201).json({ message: "✅ Registration Successful!" });
   } catch (error) {
     res.status(500).json({ message: "❌ Error registering user", error: error.message });
   }
@@ -97,7 +97,7 @@ app.post("/add-recipe", verifyToken, async (req, res) => {
   try {
     const newRecipe = new Recipe({ username, name, ingredients, instructions, image });
     await newRecipe.save();
-    res.json({ message: "✅ Recipe added successfully!" });
+    res.status(201).json({ message: "✅ Recipe added successfully!" });
   } catch (error) {
     res.status(500).json({ message: "❌ Error adding recipe", error: error.message });
   }
@@ -134,7 +134,7 @@ app.delete("/recipes/:id", verifyToken, async (req, res) => {
 });
 
 // Start Server
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
