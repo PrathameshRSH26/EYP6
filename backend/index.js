@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("./models/Users");
 const Recipe = require("./models/RecipeSchema");
+require("dotenv").config(); // Load environment variables
 
 const app = express();
 app.use(cors());
@@ -13,13 +14,13 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 const SECRET_KEY = "mySuperSecureSecretKey123!";
 
-// Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/Users_info", {
+// Connect to MongoDB Atlas
+mongoose.connect("mongodb+srv://pratham26:pratham26@cluster0.xc85u.mongodb.net/Users_info?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch(err => console.log("❌ MongoDB connection error:", err));
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch(err => console.log("❌ MongoDB Atlas connection error:", err));
 
 // User Registration
 app.post("/register", async (req, res) => {

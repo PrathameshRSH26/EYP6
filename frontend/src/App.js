@@ -21,7 +21,7 @@ function MainContent() {
   const location = useLocation();
   const hideNavbarPages = ["/login", "/register"];
   const shouldShowNavbar = !hideNavbarPages.includes(location.pathname);
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // Check localStorage for login state
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; 
 
   return (
     <div>
