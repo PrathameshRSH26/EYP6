@@ -30,7 +30,7 @@ function MainContent() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/recipes" element={isLoggedIn ? <RecipeDashboard isLoggedIn={isLoggedIn} /> : <Navigate to="/login" />} />
         <Route
           path="/recipes"
           element={isLoggedIn ? <RecipeDashboard /> : <Navigate to="/login" />}
