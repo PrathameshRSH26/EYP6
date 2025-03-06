@@ -14,14 +14,17 @@ const RecipeDashboard = ({ isLoggedIn }) => {
     image: "",
   });
 
-  // Fetch all recipes
+  // Get Backend URL from .env (fallback to localhost if undefined)
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3001";
+
   useEffect(() => {
     getRecipes();
   }, []);
 
+  // Fetch all recipes
   const getRecipes = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/recipes");
+      const response = await axios.get(`${BACKEND_URL}/recipes`);
       setRecipes(response.data);
     } catch (error) {
       console.error("Error fetching recipes:", error);
@@ -55,16 +58,13 @@ const RecipeDashboard = ({ isLoggedIn }) => {
 
     try {
       const token = localStorage.getItem("token"); // Get token from localStorage
-      const response = await axios.post("http://localhost:3001/add-recipe", newRecipe, {
+      await axios.post(`${BACKEND_URL}/add-recipe`, newRecipe, {
         headers: {
           Authorization: token, // Send token in headers
         },
       });
-      
-      // Fetch latest recipes after adding
-      getRecipes();
 
-      // Reset form and close modal
+      getRecipes();
       setNewRecipe({ name: "", ingredients: "", instructions: "", image: "" });
       setShowForm(false);
     } catch (error) {
@@ -76,15 +76,13 @@ const RecipeDashboard = ({ isLoggedIn }) => {
   const deleteRecipe = async (id) => {
     try {
       const token = localStorage.getItem("token"); // Get token from localStorage
-      await axios.delete(`http://localhost:3001/recipes/${id}`, {
+      await axios.delete(`${BACKEND_URL}/recipes/${id}`, {
         headers: {
-          Authorization: token, // Send token in headers
+          Authorization: token,
         },
       });
-      
-      // Fetch updated recipes after deleting
-      getRecipes();
 
+      getRecipes();
       setShowDetails(false);
     } catch (error) {
       console.error("Error deleting recipe:", error);
