@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #A82C48;
+    --secondry-color: #43121d;
+    --third-color: #f98169;
+    --white-color: #fff;
+    --text-color: #555;
+    --text-gray: #999;
+    --black-color: #000;
+    --primary-font: 'Roboto', sans-serif;
+    --secondry-font: 'Baloo Bhai 2', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+    font-family: var(--secondry-font);
+    overflow: hidden;
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-top: 80px; 
+}
+
+input, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus, button:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+input[type="email"], input[type="password"] {
+    background-color: #f9f9f9;
+}
+
+button {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: rgb(228, 58, 58);
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
