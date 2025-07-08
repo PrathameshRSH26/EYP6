@@ -31,7 +31,10 @@ The idea behind RecipeShare is simple: provide a place where people can post the
 Here are some key UI highlights from RecipeShare:
 
 ### 🏠 Home Page
+
+<img src="https://github.com/user-attachments/assets/a406bb2c-2926-412f-9b9f-db1fc321ba3a" alt="Screenshot 2025-07-08 204413" width="600"/>
 <img src="https://github.com/user-attachments/assets/4f8ae1e8-c3fd-4c9f-aaaf-62607930d810" alt="Home Page" width="600"/>
+
 
 ### 🍛 Recipe Listing
 <img src="https://github.com/user-attachments/assets/9d55728e-c3a5-4ae0-81ca-2d65f7ecc8f2" alt="Recipe Listing" width="600"/>
