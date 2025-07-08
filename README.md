@@ -1,6 +1,6 @@
 # 🍽️ RecipeShare – A Simple Community Recipe Platform
 
-**RecipeShare** is a full-stack web application where users can discover, share, and save their favorite recipes. Built as part of the EYP6 project, this platform helps food lovers connect through cooking.
+**RecipeShare** is a full-stack web application where users can discover, share, and save their favorite recipes. This platform helps food lovers connect through cooking.
 
 ---
 
