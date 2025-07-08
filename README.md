@@ -40,7 +40,7 @@ Here are some key UI highlights from RecipeShare:
 <img src="https://github.com/user-attachments/assets/9d55728e-c3a5-4ae0-81ca-2d65f7ecc8f2" alt="Recipe Listing" width="600"/>
 
 ### ➕ Add Recipe Form
----![Screenshot 2025-07-08 204531](https://github.com/user-attachments/assets/0477203b-c838-43f0-bd7d-1e63d267f3c3)
+<img src="https://github.com/user-attachments/assets/0477203b-c838-43f0-bd7d-1e63d267f3c3" alt="Screenshot 2025-07-08 204531" width="600"/>
 
 
 ## 🔑 Key Features
