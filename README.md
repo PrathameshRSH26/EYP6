@@ -26,11 +26,26 @@ The idea behind RecipeShare is simple: provide a place where people can post the
 
 ---
 
+## 📸 Screenshots
+
+Here are some key UI highlights from RecipeShare:
+
+### 🏠 Home Page
+<img src="https://github.com/user-attachments/assets/4f8ae1e8-c3fd-4c9f-aaaf-62607930d810" alt="Home Page" width="600"/>
+
+### 🍛 Recipe Listing
+<img src="https://github.com/user-attachments/assets/9d55728e-c3a5-4ae0-81ca-2d65f7ecc8f2" alt="Recipe Listing" width="600"/>
+
+### ➕ Add Recipe Form
+<img src="https://github.com/user-attachments/assets/6705bec4-f575-4f27-9c3a-217e47e85453" alt="Add Recipe" width="600"/>
+
+---
+
 ## 🔑 Key Features
 
-- 👤 **User Authentication** – Register, login, and logout securely
-- 🍛 **Add Recipes** – Share recipes with ingredients and preparation steps along with images
-- 🔍 **Browse Recipes** – Explore all public recipes
+- 👤 **User Authentication** – Register, login, and logout securely  
+- 🍛 **Add Recipes** – Share recipes with ingredients and preparation steps along with images  
+- 🔍 **Browse Recipes** – Explore all public recipes  
 - 📱 **Responsive UI** – Works on mobile, tablet, and desktop
 
 ---
